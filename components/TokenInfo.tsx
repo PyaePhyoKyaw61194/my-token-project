@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
-import { contract } from "../utils/MyTokenContract";
 import { ethers } from "ethers";
+import useContract from "../hooks/useContract";
 
 const TokenInfo = () => {
   const [tokenName, setTokenName] = useState("");
   const [tokenSymbol, setTokenSymbol] = useState("");
   const [tokenTotalSupply, setTokenTotalSupply] = useState("");
+  const { contract } = useContract();
 
   useEffect(() => {
     getContractInfo();
-  }, []);
+  }, [contract]);
   const getContractInfo = async () => {
+    if (!contract) return;
     const name = await contract.name();
     setTokenName(name);
 

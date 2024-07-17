@@ -1,15 +1,23 @@
+import BalanceCheck from "../components/BalanceCheck";
 import Header from "../components/Header";
 import TokenInfo from "../components/TokenInfo";
 import TransferToken from "../components/TransferToken";
 
 const Home = () => {
   return (
-    <>
-      <Header />
-      <h1>My App</h1>
+    <div className="container">
+      <div className="m-5">
+        <Header />
+      </div>
+
+      <div className="text-center bg-light p-5 m-5">
+        <h1>My Token dApp</h1>
+      </div>
+
       <TokenInfo />
       <TransferToken />
-    </>
+      <BalanceCheck />
+    </div>
   );
 };
 

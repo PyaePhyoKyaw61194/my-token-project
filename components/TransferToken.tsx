@@ -31,23 +31,31 @@ const TransferToken = () => {
     }
   };
   return (
-    <div>
+    <div className="text-center bg-light p-5 m-5">
       <h1>Transfer MYT</h1>
+
       <input
         type="text"
-        placeholder="Wallet Address"
+        className="form-control p-3 m-3"
+        placeholder="Wallet address"
         value={address}
-        onChange={(e) => setAddress(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Amount of Token"
-        value={amount}
-        onChange={(e) => setAmount(Number(e.target.value))}
+        onChange={(event) => setAddress(event.target.value)}
       />
 
-      <button disabled={loading} onClick={handleTransfer}>
-        {loading ? "Transferring..." : "Transfer"}
+      <input
+        type="number"
+        className="form-control p-3 m-3"
+        placeholder="Amount of token"
+        value={amount}
+        onChange={(event) => setAmount(Number(event.target.value))}
+      />
+
+      <button
+        onClick={handleTransfer}
+        className="btn col-3 btn-secondary p-3 m-3"
+        disabled={loading}
+      >
+        {loading ? "Loading" : "Transfer"}
       </button>
     </div>
   );

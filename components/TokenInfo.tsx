@@ -23,10 +23,14 @@ const TokenInfo = () => {
     setTokenTotalSupply(ethers.formatUnits(supply, 18));
   };
   return (
-    <div>
-      <div>Token Name : {tokenName}</div>
-      <div>Token Symbol : {tokenSymbol}</div>
-      <div>Total Supply : {tokenTotalSupply}</div>
+    <div className="container">
+      <div className="m-5">
+        <p className="alert alert-light">Token name: {tokenName}</p>
+        <p className="alert alert-light">Token symbol: {tokenSymbol}</p>
+        <p className="alert alert-light">
+          Token total supply: {tokenTotalSupply}
+        </p>
+      </div>
     </div>
   );
 };

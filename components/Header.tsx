@@ -22,8 +22,12 @@ const Header = () => {
   }, [isWeb3Enabled, account, contract]);
   return (
     <div>
-      <ConnectButton />
-      <p>{userBalance} MYT</p>
+      <div className="d-flex justify-content-between">
+        <ConnectButton />
+        <p>
+          <span className="badge bg-danger">{userBalance} MYT</span>
+        </p>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import contract from "../utils/MyTokenContract";
+import { contract } from "../utils/MyTokenContract";
 import { ethers } from "ethers";
 
 const TokenInfo = () => {

@@ -10,13 +10,13 @@ const useContract = () => {
     const initializeContract = async () => {
       if (typeof (window as any).ethereum !== "undefined") {
         // for Browser wallet
-        /*   const provider = new ethers.BrowserProvider((window as any).ethereum);
+        const provider = new ethers.BrowserProvider((window as any).ethereum);
         const signer = await provider.getSigner();
         const contractInstance = new ethers.Contract(
-          process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "",
+          process.env.NEXT_PUBLIC_MTK_CONTRACT_ADDRESS || "",
           abi,
           signer
-        ); */
+        );
 
         // For Sepolia
         /*  const provider = new ethers.AlchemyProvider(
@@ -30,21 +30,21 @@ const useContract = () => {
         );
 
         const contractInstance = new ethers.Contract(
-          process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "",
+          process.env.NEXT_PUBLIC_MTK_CONTRACT_ADDRESS || "",
           abi,
           wallet
         ); */
 
         // for local development
-        const provider = new ethers.JsonRpcProvider(
+        /*   const provider = new ethers.JsonRpcProvider(
           process.env.NEXT_PUBLIC_HARDHAT_RPC_URL
         );
         const signer = await provider.getSigner();
         const contractInstance = new ethers.Contract(
-          process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "",
+          process.env.NEXT_PUBLIC_MTK_CONTRACT_ADDRESS || "",
           abi,
           signer
-        );
+        );*/
 
         setContract(contractInstance);
       } else {
